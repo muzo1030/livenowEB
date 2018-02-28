@@ -1,0 +1,45 @@
+<body>
+	<div class="container">
+		<div class="searchbox">
+			<%= form_tag search_videos_path, :method => 'get' do %>
+			<p>
+				<%= text_field_tag :search, params[:search] %>
+				<%= submit_tag "Search", :name => nil %>
+			</p>
+			<% end %>
+			<%= link_to " logout", destroy_user_session_path, class: "glyphicon glyphicon-log-out", method: :delete %>
+			<%= link_to " signup", new_user_registration_path, class: "glyphicon glyphicon-edit"%></li>
+			<%= link_to " login", new_user_session_path, class: "glyphicon glyphicon-log-in"%>
+			<%= link_to " mypage", my_lists_path, class: "glyphicon glyphicon-edit"%>
+			<%= paginate @my_lists %>
+		</div>
+
+
+
+
+		<% @my_lists.each do |movie| %>
+		<div id="drag" class="draggable">
+			<% if current_user.my_lists.where(video_id: movie.video_id).exists? %>
+
+			<%= link_to my_list_path(movie.video_id), method: :delete do %>
+			<i class="fas fa-heart" style="color: red;"></i>
+			<% end %>
+
+			<% else %>
+
+
+			<%= link_to my_lists_path(movie.video_id), method: :post do %>
+			<i class="far fa-heart" style="color: red;"></i>
+			<% end %>
+
+
+			<% end %>
+			<%= content_tag(:iframe, '', src: "https://www.youtube.com/embed/#{movie.video_id}", width: "100%", height: "100%", frameborder: 0, allowfullscreen:true) %>
+		</div>
+		<% end %>
+
+
+
+
+	</div>
+</body>

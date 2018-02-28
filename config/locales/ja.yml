@@ -1,0 +1,59 @@
+ja:
+  helpers:
+    placeholder:
+      user:
+        name: 名前
+        phone: 電話番号
+        email: メールアドレス
+        password: パスワード(半角英数字、6文字以上で入力してください)
+        password_confirmation: 確認用パスワード
+
+    label:
+      user:
+        name: 名前
+        phone: 電話番号
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: パスワードを保存する
+
+
+
+
+  activerecord:
+    models:
+      user:　ユーザー
+    attributes:
+      user:
+        name: 名前
+        password: パスワード
+        lastname: 名字
+        firstname: 名前
+        kana_lastname: 名字(カナ)
+        kana_firstname: 名前(カナ)
+        postal_code: 郵便番号
+        address: 住所
+        address2: 建物/部屋番号
+        phone: 電話番号1
+        phone2: 電話番号2
+        phone3: 電話番号3
+        encrypted_password: パスワード(確認用)
+
+        password_confirmation: パスワード(確認用)
+        email: メールアドレス
+        current_password: 現在のパスワード
+  enums:
+    history:
+      order_status:
+        in_ordered: 受付中
+        preparation: 配送準備中
+        in_delivery: 配送中
+        finish: 配送完了
+    user:
+      active:
+        active: ◎
+        inactive: ×
+    item:
+        active:
+            display: 表示
+            hide: 非表示
