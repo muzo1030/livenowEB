@@ -16795,3 +16795,733 @@ Processing by VideosController#index as HTML
 Completed 200 OK in 855ms (Views: 259.1ms | ActiveRecord: 10.9ms)
 
 
+Started GET "/" for 10.0.2.2 at 2018-03-01 11:20:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 50ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-03-01 11:20:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (62.4ms)
+Completed 200 OK in 2254ms (Views: 2247.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2018-03-01 11:20:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/q19PxF2bLU1a11yDXpN0iMppeXfpV5MuZlOKudq9hWeIpQUz+rVa714qyUKYJRlZD/DS9VV4fcahfdjn4Di6w==", "user"=>{"login"=>"a@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (lower(name) = 'a@gmail.com' OR lower(email) = 'a@gmail.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["name", "テスト太郎"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-03-01 11:20:35.231151"], ["sign_in_count", 2], ["updated_at", "2018-03-01 11:20:35.250663"], ["id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 269ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/" for 10.0.2.2 at 2018-03-01 11:20:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "_YQS_sKQWKs"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (169.3ms)
+Completed 200 OK in 1949ms (Views: 288.1ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/my_lists" for 10.0.2.2 at 2018-03-01 11:20:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MyListsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering my_lists/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "my_lists"[0m
+  [1m[36mMyList Load (0.8ms)[0m  [1m[34mSELECT  "my_lists".* FROM "my_lists" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "gFrmh2nMM9g"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "AmLW4zqL5M4"], ["LIMIT", 1]]
+  Rendered my_lists/index.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 188ms (Views: 157.9ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/my_lists" for 10.0.2.2 at 2018-03-01 11:20:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MyListsController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering my_lists/index.html.erb within layouts/application
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "my_lists"[0m
+  [1m[36mMyList Load (0.8ms)[0m  [1m[34mSELECT  "my_lists".* FROM "my_lists" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "gFrmh2nMM9g"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "AmLW4zqL5M4"], ["LIMIT", 1]]
+  Rendered my_lists/index.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 174ms (Views: 148.1ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/videos/search?utf8=%E2%9C%93&search=" for 10.0.2.2 at 2018-03-01 11:20:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>""}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "_YQS_sKQWKs"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (112.3ms)
+Completed 200 OK in 1407ms (Views: 258.7ms | ActiveRecord: 10.3ms)
+
+
+Started DELETE "/users/sign_out" for 10.0.2.2 at 2018-03-01 11:45:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1yR9By/V0TaMcT523oMD1fO+vQZ9Gmm5aKpji4f5gig2jqkUPCVkbLqC9p6Q0AqGSEboiJ7dryxKm9ouC165WA=="}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 10.0.2.2 at 2018-03-01 11:45:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-03-01 11:45:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 168ms (Views: 167.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-03-01 11:45:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 168ms (Views: 166.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2018-03-01 11:52:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DyGPKOQFXgEJ3KJ2qmP5V64Zfj67cNyvTTLBESyN7M3a2vM3xncYueZ1WmQrFEHhkbX5lMQwMvodud3PANluow==", "user"=>{"login"=>"a@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (lower(name) = 'a@gmail.com' OR lower(email) = 'a@gmail.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["name", "テスト太郎"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-03-01 11:52:07.574674"], ["last_sign_in_at", "2018-03-01 11:20:35.231151"], ["sign_in_count", 3], ["updated_at", "2018-03-01 11:52:07.581599"], ["id", 1]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 204ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/" for 10.0.2.2 at 2018-03-01 11:52:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "_YQS_sKQWKs"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (116.2ms)
+Completed 200 OK in 1523ms (Views: 238.7ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-03-01 11:52:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/sign_out" for 10.0.2.2 at 2018-03-01 11:52:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"N/7sjgEAfiILHpWQku/aeEzQgZfjICbHh5hukwkwLsuKOmBows9ZG/sIFu3oOJiynXRqnBdgLm5z7xqqoVPIdg=="}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 10.0.2.2 at 2018-03-01 11:52:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-03-01 11:52:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 164ms (Views: 163.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-03-01 11:52:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 159ms (Views: 158.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2018-03-01 11:59:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kMXvNW92jbKHumjRcReEpBJ6hpOe5wPOkCOp+rkmWt3hY+7IahBC753mEsKun8mVjkI3H+kYqMkXiDGdxICZ8A==", "user"=>{"login"=>"a@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (lower(name) = 'a@gmail.com' OR lower(email) = 'a@gmail.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["name", "テスト太郎"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-03-01 11:59:41.315917"], ["last_sign_in_at", "2018-03-01 11:52:07.574674"], ["sign_in_count", 4], ["updated_at", "2018-03-01 11:59:41.320461"], ["id", 1]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 197ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/" for 10.0.2.2 at 2018-03-01 11:59:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4-_Slcyj6wM"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (101.4ms)
+Completed 200 OK in 1274ms (Views: 217.0ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/videos/index?page=7" for 10.0.2.2 at 2018-03-01 11:59:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  Parameters: {"page"=>"7"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "tB5ZgV1krlU"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4RQaSd9jRSE"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (102.1ms)
+Completed 200 OK in 1606ms (Views: 222.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/videos/index" for 10.0.2.2 at 2018-03-01 12:00:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4-_Slcyj6wM"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (111.3ms)
+Completed 200 OK in 1142ms (Views: 240.1ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/videos/search?utf8=%E2%9C%93&search=linkin" for 10.0.2.2 at 2018-03-01 12:00:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"linkin"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "TDejRjI3TdQ"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "_KS2GBchAH4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "nMTnSVP5Lgk"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "NBAaZBJf-CI"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "E5-BCHFajbM"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "k62QM9oMo4g"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "DZ8vA4vaPxk"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "7UO61zmccxc"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (109.7ms)
+Completed 200 OK in 1297ms (Views: 241.9ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/videos/search?page=2&search=linkin" for 10.0.2.2 at 2018-03-01 12:00:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#search as HTML
+  Parameters: {"page"=>"2", "search"=>"linkin"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "jpg0g4wo8T4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4W_YgNW7gs0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4GOAoowecws"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JxleAI2u400"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "sjN-NGsRg9g"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "QsblRIiRbyU"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "C4GW7-ciVWk"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "wPg1DhVswgU"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (134.6ms)
+Completed 200 OK in 1214ms (Views: 262.1ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/my_lists.jpg0g4wo8T4" for 10.0.2.2 at 2018-03-01 12:02:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MyListsController#create as 
+  Parameters: {"authenticity_token"=>"yrv2JfSSqcyhQEf4NdCqDyREqrInVBxrwxsaP9znqn4uOyJ2CoviLmwSHCENZr5XkBNT5Y/XFDmZeS0oWuLbCw=="}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.2ms)[0m  [1m[32mINSERT INTO "my_lists" ("user_id", "video_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["video_id", "jpg0g4wo8T4"], ["created_at", "2018-03-01 12:02:00.370326"], ["updated_at", "2018-03-01 12:02:00.370326"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 45ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/" for 10.0.2.2 at 2018-03-01 12:02:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4-_Slcyj6wM"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (159.8ms)
+Completed 200 OK in 2381ms (Views: 347.7ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/my_lists" for 10.0.2.2 at 2018-03-01 12:02:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MyListsController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering my_lists/index.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "my_lists"[0m
+  [1m[36mMyList Load (1.0ms)[0m  [1m[34mSELECT  "my_lists".* FROM "my_lists" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "gFrmh2nMM9g"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "AmLW4zqL5M4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "jpg0g4wo8T4"], ["LIMIT", 1]]
+  Rendered my_lists/index.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 186ms (Views: 153.9ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/my_lists" for 10.0.2.2 at 2018-03-01 12:02:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MyListsController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering my_lists/index.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "my_lists"[0m
+  [1m[36mMyList Load (1.1ms)[0m  [1m[34mSELECT  "my_lists".* FROM "my_lists" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "gFrmh2nMM9g"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "AmLW4zqL5M4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "jpg0g4wo8T4"], ["LIMIT", 1]]
+  Rendered my_lists/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 182ms (Views: 153.6ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/videos/search?utf8=%E2%9C%93&search=" for 10.0.2.2 at 2018-03-01 12:02:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>""}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4-_Slcyj6wM"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (112.7ms)
+Completed 200 OK in 1259ms (Views: 240.8ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/videos/" for 10.0.2.2 at 2018-03-01 14:26:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1YA4j22eJJ4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (127.9ms)
+Completed 200 OK in 1408ms (Views: 286.1ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/videos/" for 10.0.2.2 at 2018-03-01 14:29:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1YA4j22eJJ4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (118.6ms)
+Completed 200 OK in 1235ms (Views: 368.8ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/videos/" for 10.0.2.2 at 2018-03-01 14:31:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1YA4j22eJJ4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (133.2ms)
+Completed 200 OK in 1219ms (Views: 411.4ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/videos/" for 10.0.2.2 at 2018-03-01 14:32:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1YA4j22eJJ4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (112.0ms)
+Completed 200 OK in 1053ms (Views: 351.1ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/videos/" for 10.0.2.2 at 2018-03-01 14:33:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1YA4j22eJJ4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (142.8ms)
+Completed 200 OK in 1371ms (Views: 410.5ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/videos/" for 10.0.2.2 at 2018-03-01 14:36:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1YA4j22eJJ4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (125.0ms)
+Completed 200 OK in 1066ms (Views: 390.9ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/videos/" for 10.0.2.2 at 2018-03-01 14:38:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1YA4j22eJJ4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (103.5ms)
+Completed 200 OK in 1208ms (Views: 353.5ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/videos/" for 10.0.2.2 at 2018-03-01 14:43:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1YA4j22eJJ4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (113.6ms)
+Completed 200 OK in 1325ms (Views: 370.1ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/videos/" for 10.0.2.2 at 2018-03-01 14:45:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1YA4j22eJJ4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (113.8ms)
+Completed 200 OK in 1684ms (Views: 408.2ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/videos/" for 10.0.2.2 at 2018-03-01 14:56:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1YA4j22eJJ4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "4d2G1mGQWnc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JB21TibbwRE"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "JMvbwcNd5N0"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1Vibqf8h1m4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "3e3gKeKHzW4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (112.2ms)
+Completed 200 OK in 1915ms (Views: 350.9ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/videos/" for 10.0.2.2 at 2018-03-02 14:19:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "RnIjRrtDGyI"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "tiOB6pU2iTs"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "adhdU89UcYo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "gQBT3X6FW24"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "yUQ7RvWUDSQ"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "KUMveMQnogc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "OEGDX8SOw48"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "yI8xCWk1nno"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (198.6ms)
+Completed 200 OK in 3997ms (Views: 2727.8ms | ActiveRecord: 22.1ms)
+
+
+Started GET "/videos/" for 10.0.2.2 at 2018-03-02 14:21:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "RnIjRrtDGyI"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "tiOB6pU2iTs"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "adhdU89UcYo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "gQBT3X6FW24"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "yUQ7RvWUDSQ"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "KUMveMQnogc"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "OEGDX8SOw48"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "yI8xCWk1nno"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (189.2ms)
+Completed 200 OK in 3579ms (Views: 2466.9ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/videos/" for 10.0.2.2 at 2018-03-03 04:12:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1jX6nXZ6LkM"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "Smm1rTH8F_w"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "gjhm_4GpDE4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "5d-tXPV7m0I"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "10eu-r0-I94"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "v1ourToUq1o"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "-ESfJq_5v-8"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "vmgfuwioTl4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (195.4ms)
+Completed 200 OK in 4084ms (Views: 874.8ms | ActiveRecord: 24.0ms)
+
+
+Started GET "/videos/index?page=3" for 10.0.2.2 at 2018-03-03 04:13:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "M32Zul9dJj8"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "qYFwPXk2Z1c"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "yI8xCWk1nno"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "EXt1yScrb7M"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "pJ4SMGoSIKs"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "ajTfrGK1lj8"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "XLvevuZ2z6A"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "x2OpODJfdJ8"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (179.8ms)
+Completed 200 OK in 998ms (Views: 359.2ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/my_lists.M32Zul9dJj8" for 10.0.2.2 at 2018-03-03 04:13:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MyListsController#create as 
+  Parameters: {"authenticity_token"=>"MqusZ14761aAEhTnwbB0+wURa1UxBSmg+PVux/CwdGjWK3g0oCKgtE1ATz75BmCjsUaSApmGIfKil1nQdrUFHQ=="}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "my_lists" ("user_id", "video_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["video_id", "M32Zul9dJj8"], ["created_at", "2018-03-03 04:13:46.650489"], ["updated_at", "2018-03-03 04:13:46.650489"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 42ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2018-03-03 04:13:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1jX6nXZ6LkM"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "Smm1rTH8F_w"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "gjhm_4GpDE4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "5d-tXPV7m0I"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "10eu-r0-I94"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "v1ourToUq1o"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "-ESfJq_5v-8"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "vmgfuwioTl4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (114.1ms)
+Completed 200 OK in 965ms (Views: 243.3ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/my_lists" for 10.0.2.2 at 2018-03-03 04:13:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MyListsController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering my_lists/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "my_lists"[0m
+  [1m[36mMyList Load (1.1ms)[0m  [1m[34mSELECT  "my_lists".* FROM "my_lists" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "gFrmh2nMM9g"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "AmLW4zqL5M4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "jpg0g4wo8T4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "M32Zul9dJj8"], ["LIMIT", 1]]
+  Rendered my_lists/index.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 199ms (Views: 166.1ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/my_lists" for 10.0.2.2 at 2018-03-03 04:13:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MyListsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering my_lists/index.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "my_lists"[0m
+  [1m[36mMyList Load (0.8ms)[0m  [1m[34mSELECT  "my_lists".* FROM "my_lists" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "gFrmh2nMM9g"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "N9IdB7cMt44"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "d7BAmKaKkzo"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "AmLW4zqL5M4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "jpg0g4wo8T4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "M32Zul9dJj8"], ["LIMIT", 1]]
+  Rendered my_lists/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 184ms (Views: 156.8ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/videos/search?utf8=%E2%9C%93&search=" for 10.0.2.2 at 2018-03-03 04:13:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>""}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1jX6nXZ6LkM"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "Smm1rTH8F_w"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "gjhm_4GpDE4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "5d-tXPV7m0I"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "10eu-r0-I94"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "v1ourToUq1o"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "-ESfJq_5v-8"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "vmgfuwioTl4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (137.8ms)
+Completed 200 OK in 1002ms (Views: 322.8ms | ActiveRecord: 10.2ms)
+
+
+Started POST "/my_lists.1jX6nXZ6LkM" for 10.0.2.2 at 2018-03-03 04:14:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MyListsController#create as 
+  Parameters: {"authenticity_token"=>"DsUJVxBzE4puvd+BhfySGoW+cqRju+UE+XJEsoQH57DqRd0E7mpYaKPvhFi9SoZCMemL88s47VajEHOlAgKWxQ=="}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "my_lists" ("user_id", "video_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["video_id", "1jX6nXZ6LkM"], ["created_at", "2018-03-03 04:14:03.081942"], ["updated_at", "2018-03-03 04:14:03.081942"]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/" for 10.0.2.2 at 2018-03-03 04:14:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "1jX6nXZ6LkM"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "Smm1rTH8F_w"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "gjhm_4GpDE4"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "5d-tXPV7m0I"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "10eu-r0-I94"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "v1ourToUq1o"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "-ESfJq_5v-8"], ["LIMIT", 1]]
+  [1m[36mMyList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "my_lists" WHERE "my_lists"."user_id" = ? AND "my_lists"."video_id" = ? LIMIT ?[0m  [["user_id", 1], ["video_id", "vmgfuwioTl4"], ["LIMIT", 1]]
+  Rendered videos/index.html.erb within layouts/application (114.5ms)
+Completed 200 OK in 1861ms (Views: 230.5ms | ActiveRecord: 11.6ms)
+
+
