@@ -15,9 +15,7 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require interactjs
-//= require rails-ujs
 //= require_tree .
-
 
 // target elements with the "draggable" class
 interact('.draggable')

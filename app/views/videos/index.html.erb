@@ -20,24 +20,15 @@
 		<% @movies_page.each do |movie| %>
 		<div id="drag" class="draggable">
 
-
 			<% if current_user.my_lists.where(video_id: movie.id.videoId).exists? %>
-
-			<%= link_to my_list_path(movie.id.videoId), method: :delete do %>
-			<i class="fas fa-heart" style="color: red;"></i>
-			<% end %>
-
+				<%= link_to my_list_path(movie.id.videoId), method: :delete, id: "favorite-heart#{movie.id.videoId}", remote: true do %>
+					<i class="fas fa-heart" style="color: red;"></i>
+				<% end %>
 			<% else %>
-
-
-			<%= link_to my_lists_path(movie.id.videoId), method: :post do %>
-			<i class="far fa-heart" style="color: red;"></i>
+				<%= link_to my_lists_path(movie.id.videoId), method: :post, id: "favorite-heart#{movie.id.videoId}", remote: true do %>
+					<i class="far fa-heart" style="color: red;"></i>
+				<% end %>
 			<% end %>
-
-
-			<% end %>
-
-
 
 			<%= content_tag(:iframe, '', src: "https://www.youtube.com/embed/#{movie.id.videoId}", width: "100%", height: "100%", frameborder: 0, allowfullscreen:true) %>
 		</div>
