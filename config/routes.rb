@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   	collection do
   		get "search" => 'videos#search'
   	end
-    resources :my_lists, only: [:create, :destroy]
   end
 
-  resources :my_lists, only: [:index]
+  resources :my_lists, only: [:index, :create, :destroy]
 
 end
