@@ -1,15 +1,117 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+@import "materialize/components/color-variables";
+$primary-color: color("blue-grey", "darken-4") !default;
+$secondary-color: color("cyan", "accent-2") !default;
+@import 'materialize';
+
+
+body {
+background-image: image-url("logo4.jpg");
+background-size: cover; /* 背景画像の縦横比を維持したまま背景の表示領域を覆うように表示 */
+background-position: center; /* 背景画像を中央に配置 */
+}
+
+.btn {
+background-color: #00e5ff;
+}
+
+#drag {
+min-height: 1em;
+margin: 1%;
+background-color: black;
+border-radius: 0.75em;
+padding: 3.5%;
+
+-webkit-transform: translate(0px, 0px);
+transform: translate(0px, 0px);
+}
+
+#drag-me::before {
+content: "#" attr(id);
+font-weight: bold;
+}
+
+#searchbox {
+grid-column: 2/3;
+grid-row: 2/3;
+border-radius: 0.75em;
+position: relative;
+background-color: rgba( 0, 0, 0, 0.01); /* 背景色を半透明の黒にする */
+}
+
+.page {
+position: absolute;
+right: 0;
+bottom: 0;
+left: 0;
+}
+
+.container {
+width: 100vw;
+height: 97vh;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 1fr);
+}
+
+.container2 {
+width: 100vw;
+height: 97vh;
+
+}
+
+.container .draggable:nth-child(1) {
+grid-column: 1/2;
+grid-row: 1/2;
+}
+
+.container .draggable:nth-child(2) {
+grid-column: 2/3;
+grid-row: 1/2;
+}
+
+.container .draggable:nth-child(3) {
+grid-column: 3/4;
+grid-row: 1/2;
+}
+
+.container .draggable:nth-child(4) {
+grid-column: 1/2;
+grid-row: 2/3;
+}
+
+.container .draggable:nth-child(5) {
+grid-column: 3/4;
+grid-row: 2/3;
+}
+
+.container .draggable:nth-child(6) {
+grid-column: 1/2;
+grid-row: 3/4;
+}
+
+.container .draggable:nth-child(7) {
+grid-column: 2/3;
+grid-row: 3/4;
+}
+
+.container .draggable:nth-child(8) {
+grid-column: 3/4;
+grid-row: 3/4;
+}
+

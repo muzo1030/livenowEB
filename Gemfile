@@ -55,15 +55,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-#Additional Gems
-gem "refile", require: "refile/rails", github: 'manfe/refile'
-gem "refile-mini_magick"
+#Additional Gems"
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'kaminari'
-gem 'enum_help'
-gem 'jquery-turbolinks'
 
 # frozen_string_literal: true
 # A sample Gemfile
@@ -71,6 +67,6 @@ source "https://rubygems.org"
 gem 'google-api-client', '<0.9'
 # gem "rails"
 gem 'trollop', '~> 2.1'
-
 gem 'rails-assets-interactjs', source: 'https://rails-assets.org'
+gem 'materialize-sass', '~> 1.0.0.alpha4'
 

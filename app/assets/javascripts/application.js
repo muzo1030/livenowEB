@@ -12,9 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.turbolinks
-//= require turbolinks
 //= require interactjs
+//= require materialize-sprockets
 //= require_tree .
 
 // target elements with the "draggable" class
@@ -33,16 +32,6 @@ interact('.draggable')
 
     // call this function on every dragmove event
     onmove: dragMoveListener,
-    // call this function on every dragend event
-    onend: function (event) {
-      var textEl = event.target.querySelector('p');
-
-      textEl && (textEl.textContent =
-        'moved a distance of '
-        + (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
-                     Math.pow(event.pageY - event.y0, 2) | 0))
-            .toFixed(2) + 'px');
-    }
   });
 
   function dragMoveListener (event) {
@@ -63,3 +52,5 @@ interact('.draggable')
 
   // this is used later in the resizing and gesture demos
   window.dragMoveListener = dragMoveListener;
+
+
