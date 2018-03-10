@@ -12,12 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.turbolinks
-//= require turbolinks
 //= require interactjs
-//= require rails-ujs
+//= require materialize-sprockets
 //= require_tree .
-
 
 // target elements with the "draggable" class
 interact('.draggable')
@@ -35,16 +32,6 @@ interact('.draggable')
 
     // call this function on every dragmove event
     onmove: dragMoveListener,
-    // call this function on every dragend event
-    onend: function (event) {
-      var textEl = event.target.querySelector('p');
-
-      textEl && (textEl.textContent =
-        'moved a distance of '
-        + (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
-                     Math.pow(event.pageY - event.y0, 2) | 0))
-            .toFixed(2) + 'px');
-    }
   });
 
   function dragMoveListener (event) {
@@ -65,3 +52,26 @@ interact('.draggable')
 
   // this is used later in the resizing and gesture demos
   window.dragMoveListener = dragMoveListener;
+
+
+
+
+
+$("select#year_select").change(function(){
+        $.ajax({
+            url: "projects/change_session_year",
+            type: "GET",
+            data: {year : $(":selected").attr("value"),
+                    id: 1,
+                    mode: 'hoge',
+                    type: 'entry'
+                    },
+            dataType: "html",
+            success: function(data) {
+                alert("success");
+            },
+            error: function(data) {
+                alert("errror");
+            }
+        });
+    });

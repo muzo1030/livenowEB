@@ -1,0 +1,3 @@
+<%= link_to my_list_path(@my_list.video_id), remote: true, method: :delete do %>
+  <i id="favorite-heart<%= @my_list.video_id %>" class="fas fa-heart" style="color: red;"></i>
+<% end %>

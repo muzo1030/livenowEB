@@ -1,19 +1,21 @@
 class MyListsController < ApplicationController
 
 	def create
-		my_list = current_user.my_lists.new(video_id: params[:format])
-		my_list.save
-		redirect_to root_path
+		v_id = params[:format]
+		@my_list = current_user.my_lists.new(video_id: v_id)
+		@my_list.save
 	end
 
 	def destroy
-		my_list = current_user.my_lists.find_by(video_id: params[:id])
-		my_list.destroy
-		redirect_to root_path
+		v_id = params[:id]
+		@my_list = current_user.my_lists.find_by(video_id: v_id)
+		@my_list.destroy
+
+		# redirect_to root_path
 	end
 
 	def index
-		@my_lists = MyList.all.page(params[:page]).per(8)
+		@my_lists = MyList.all.page(params[:page]).per(8).reverse_order
 	end
 
 	private
