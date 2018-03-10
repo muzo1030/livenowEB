@@ -4,7 +4,7 @@ class MyListsController < ApplicationController
 		v_id = params[:format]
 		@my_list = current_user.my_lists.new(video_id: v_id)
 		@my_list.save
-		render :json {}
+	end
 
 	def destroy
 		v_id = params[:id]
@@ -15,7 +15,7 @@ class MyListsController < ApplicationController
 	end
 
 	def index
-		@my_lists = MyList.all.page(params[:page]).per(8)
+		@my_lists = MyList.all.page(params[:page]).per(8).reverse_order
 	end
 
 	private
