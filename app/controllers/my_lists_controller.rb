@@ -4,9 +4,7 @@ class MyListsController < ApplicationController
 		v_id = params[:format]
 		@my_list = current_user.my_lists.new(video_id: v_id)
 		@my_list.save
-
-		# redirect_to root_path
-	end
+		render :json {}
 
 	def destroy
 		v_id = params[:id]

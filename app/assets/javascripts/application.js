@@ -54,3 +54,24 @@ interact('.draggable')
   window.dragMoveListener = dragMoveListener;
 
 
+
+
+
+$("select#year_select").change(function(){
+        $.ajax({
+            url: "projects/change_session_year",
+            type: "GET",
+            data: {year : $(":selected").attr("value"),
+                    id: 1,
+                    mode: 'hoge',
+                    type: 'entry'
+                    },
+            dataType: "html",
+            success: function(data) {
+                alert("success");
+            },
+            error: function(data) {
+                alert("errror");
+            }
+        });
+    });
