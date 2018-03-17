@@ -1,41 +1,44 @@
 <body>
 	<div class="container">
+		<!-- 操作覧 -->
 		<div id="searchbox" class="draggable center hoverable">
-
-			<%= form_tag search_videos_path, :method => 'get' , :style => "display: flex;"  do %>
-			<%= text_field_tag :search, params[:search], :placeholder => "", :class => "input-field", :style => "height: 2.5rem;" %>
-			<%= button_tag :type => "submit", :name => nil , :class => "btn waves-effect waves-light", :style => "height: 2.5rem;" do %>
-			<i class="fa fa-search faa-vertical animated-hover"></i>
-			<% end %>
-			<% end %>
-
-			<div>
-				<%= link_to " logout", destroy_user_session_path, class: "fa fa-sign-out", method: :delete %>
-				<%= link_to " signup", new_user_registration_path, class: "fa fa-sign-in"%></li>
-				<%= link_to " login", new_user_session_path, class: "fa fa-sign-in"%>
-				<%= link_to " mypage", my_lists_path, class: "fa fa-user"%>
-			</div>
+			<!-- ヘッダー覧 -->
+			<div class="flow-text">
+				<%= link_to " top", root_path, class: "fa fa-video-camera icon"%>
+				<%= link_to " mypage", my_lists_path, class: "fa fa-user icon"%>
+				<%= link_to " logout", destroy_user_session_path, class: "fa fa-sign-out icon", method: :delete %>
+			</div><!-- end ヘッダー覧 -->
+				<!-- 検索覧 -->
+				<%= form_tag search_videos_path, :method => 'get' , :style => "display: flex;"  do %>
+					<%= text_field_tag :search, params[:search], :placeholder => "曲名、アーティスト名は正確に入力してください", :class => "input-field", :style => "height: 2.5rem; font-size: 90%;" %>
+					<%= button_tag :type => "submit", :name => nil , :class => "btn waves-effect", :style => "height: 2.5rem;" do %>
+						<i class="fa fa-search faa-vertical animated-hover"></i>
+					<% end %>
+				<% end %><!-- end 検索覧 -->
+			<!-- フッター覧 -->
 			<div class="page">
 				<%= paginate @movies_page %>
-			</div>
-
-		</div>
-
+			</div><!-- end フッター覧 -->
+		</div><!-- end 操作覧 -->
+		<!-- video覧 -->
 		<% @movies_page.each do |movie| %>
-		<div id="drag" class="draggable hoverable">
-
-			<% if current_user.my_lists.where(video_id: movie.id.videoId).exists? %>
-				<%= link_to my_list_path(movie.id.videoId), remote: true, method: :delete, id: "favorite-heart#{movie.id.videoId}" do %>
-					<i class="fas fa-heart faa-ring animated-hover z-depth-5" style="color: red;"></i>
+			<div id="drag" class="draggable hoverable">
+				<% if current_user.my_lists.where(video_id: movie.id.videoId).exists? %>
+					<!-- mylist登録時表示 -->
+					<%= link_to my_list_path(movie.id.videoId), remote: true, method: :delete, id: "favorite-heart#{movie.id.videoId}" do %>
+						<i class="fas fa-heart faa-ring animated-hover z-depth-5" style="color: red;"></i>
+					<% end %><!-- end mylist登録時表示 -->
+				<% else %>
+					<!-- mylist未登録時表示 -->
+					<%= link_to my_lists_path(movie.id.videoId), remote: true, method: :post, id: "favorite-heart#{movie.id.videoId}" do %>
+						<i class="far fa-heart faa-wrench animated-hover z-depth-5" style="color: red;"></i>
+					<% end %><!--end mylist未登録時表示 -->
 				<% end %>
-			<% else %>
-				<%= link_to my_lists_path(movie.id.videoId), remote: true, method: :post, id: "favorite-heart#{movie.id.videoId}" do %>
-					<i class="far fa-heart faa-wrench animated-hover z-depth-5" style="color: red;"></i>
-				<% end %>
-			<% end %>
+				<!-- youtubeAPI覧 -->
 				<%= content_tag(:iframe, '', src: "https://www.youtube.com/embed/#{movie.id.videoId}", width: "90%", height: "100%", frameborder: 0, allowfullscreen:true) %>
-		</div>
-		<% end %>
-
+			</div>
+		<% end %><!-- end video覧 -->
 	</div>
 </body>
+
+

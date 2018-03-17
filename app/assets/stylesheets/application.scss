@@ -14,22 +14,36 @@
 *= require_self
 */
 
+/* materialize初期設定 */
 @import "materialize/components/color-variables";
 $primary-color: color("blue-grey", "darken-4") !default;
 $secondary-color: color("cyan", "accent-2") !default;
 @import 'materialize';
 
+/* アンカーのフォント変更 */
+a {
+  color: #ffffff;
+  font-weight: 500;
+}
 
+/* ロゴの背景表示 */
 body {
 background-image: image-url("logo4.jpg");
 background-size: cover; /* 背景画像の縦横比を維持したまま背景の表示領域を覆うように表示 */
 background-position: center; /* 背景画像を中央に配置 */
 }
 
+/* ヘッダーフォント変更 */
+.icon{
+	font-size: 80%;
+}
+
+/* ボタン色変更 */
 .btn {
 background-color: #00e5ff;
 }
 
+/* video覧表示設定 */
 #drag {
 min-height: 1em;
 margin: 1%;
@@ -41,19 +55,16 @@ padding: 3.5%;
 transform: translate(0px, 0px);
 }
 
-#drag-me::before {
-content: "#" attr(id);
-font-weight: bold;
-}
-
+/* 検索覧表示設定 */
 #searchbox {
 grid-column: 2/3;
 grid-row: 2/3;
 border-radius: 0.75em;
-position: relative;
+position: relative; /* ページ中央寄せ調整 */
 background-color: rgba( 0, 0, 0, 0.01); /* 背景色を半透明の黒にする */
 }
 
+/* ページ中央寄せ調整 */
 .page {
 position: absolute;
 right: 0;
@@ -61,6 +72,7 @@ bottom: 0;
 left: 0;
 }
 
+/* ビデオページ、グリッドデザイン親設定 */
 .container {
 width: 100vw;
 height: 97vh;
@@ -69,12 +81,13 @@ grid-template-columns: repeat(3, 1fr);
 grid-template-rows: repeat(3, 1fr);
 }
 
+/* ログイン、グリッドデザイン親設定 */
 .container2 {
 width: 100vw;
 height: 97vh;
-
 }
 
+/* ビデオページ、グリッドデザイン子設定 */
 .container .draggable:nth-child(1) {
 grid-column: 1/2;
 grid-row: 1/2;
@@ -114,4 +127,3 @@ grid-row: 3/4;
 grid-column: 3/4;
 grid-row: 3/4;
 }
-

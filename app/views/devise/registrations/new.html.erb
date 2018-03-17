@@ -1,33 +1,36 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<body>
   <%= devise_error_messages! %>
+  <div class="container2 center">
+    <div class="row">
+      <div class="z-depth-3 col s12 m12 l4  offset-l4"><br />
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.label :name %><br />
+          <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autocomplete: "email" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
+        <div class="field">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div><br />
+
+        <div class="actions btn waves-effect">
+          <%= f.submit "登録する" %>
+        </div><br /><br />
+        <%= render "devise/shared/links", :class => "flow-text" %>
+        <% end %>
+        <br />
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>
