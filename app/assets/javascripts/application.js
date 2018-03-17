@@ -16,6 +16,7 @@
 //= require materialize-sprockets
 //= require_tree .
 
+// interact.jsライブラリ
 // target elements with the "draggable" class
 interact('.draggable')
   .draggable({
@@ -52,26 +53,3 @@ interact('.draggable')
 
   // this is used later in the resizing and gesture demos
   window.dragMoveListener = dragMoveListener;
-
-
-
-
-
-$("select#year_select").change(function(){
-        $.ajax({
-            url: "projects/change_session_year",
-            type: "GET",
-            data: {year : $(":selected").attr("value"),
-                    id: 1,
-                    mode: 'hoge',
-                    type: 'entry'
-                    },
-            dataType: "html",
-            success: function(data) {
-                alert("success");
-            },
-            error: function(data) {
-                alert("errror");
-            }
-        });
-    });

@@ -39,6 +39,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -69,4 +70,4 @@ gem 'google-api-client', '<0.9'
 gem 'trollop', '~> 2.1'
 gem 'rails-assets-interactjs', source: 'https://rails-assets.org'
 gem 'materialize-sass', '~> 1.0.0.alpha4'
-
+gem 'material_icons'
