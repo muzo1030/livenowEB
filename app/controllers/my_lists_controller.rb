@@ -13,7 +13,7 @@ class MyListsController < ApplicationController
 	end
 
 	def index
-		@my_lists = MyList.all.page(params[:page]).per(8).reverse_order
+		@my_lists = current_user.my_lists.all.page(params[:page]).per(8).reverse_order
 	end
 
 	private
