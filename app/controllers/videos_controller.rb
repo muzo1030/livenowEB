@@ -27,7 +27,7 @@ class VideosController < ApplicationController
       opt :regionCode, 'region', :type => String, :default => 'JP'#第一言語を日本語で取得
       opt :type, 'type', :type => String, :default => 'video'
       opt :video_category_id, 'video category id', :type => String, :default => '10'#音楽カテゴリで取得
-      opt :video_definition, 'video definition', :type => String, :default => 'high'#HD動画のみ取得
+      # opt :video_definition, 'video definition', :type => String, :default => 'high'#HD動画のみ取得
     end
     client, youtube = get_service
     begin
@@ -42,7 +42,7 @@ class VideosController < ApplicationController
           :regionCode => opts[:regionCode],
           :type => opts[:type],
           :videoCategoryId => opts[:video_category_id],
-          :videoDefinition => opts[:video_definition]
+          # :videoDefinition => opts[:video_definition]
         }
         )
 
