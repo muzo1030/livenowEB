@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require interactjs
-//= require materialize-sprockets
+//= require materialize
 //= require_tree .
 
 // interact.jsライブラリ
