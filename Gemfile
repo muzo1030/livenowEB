@@ -72,4 +72,5 @@ gem 'trollop', '~> 2.1'
 gem 'rails-assets-interactjs', source: 'https://rails-assets.org'
 gem 'materialize-sass', '~> 1.0.0.alpha4'
 gem 'material_icons'
+gem 'utf8-cleaner'
 
