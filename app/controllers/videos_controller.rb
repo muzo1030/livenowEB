@@ -41,7 +41,7 @@ class VideosController < ApplicationController
           :order => opts[:order],
           :regionCode => opts[:regionCode],
           :type => opts[:type],
-          :videoCategoryId => opts[:video_category_id],
+          :videoCategoryId => opts[:video_category_id]
           # :videoDefinition => opts[:video_definition]
         }
         )
