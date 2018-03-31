@@ -50,6 +50,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
+  gem 'listen', '>= 3.0.5', '< 3.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -71,4 +72,4 @@ gem 'trollop', '~> 2.1'
 gem 'rails-assets-interactjs', source: 'https://rails-assets.org'
 gem 'materialize-sass', '~> 1.0.0.alpha4'
 gem 'material_icons'
-gem 'listen', '>= 3.0.5', '< 3.2'
+
