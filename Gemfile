@@ -65,12 +65,11 @@ gem 'kaminari'
 
 # frozen_string_literal: true
 # A sample Gemfile
-source "https://rubygems.org"
-gem 'google-api-client', '<0.9'
+gem 'google-api-client', '~> 0.11'
 # gem "rails"
 gem 'trollop', '~> 2.1'
-gem 'rails-assets-interactjs', source: 'https://rails-assets.org'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-interact'
+end
 gem 'materialize-sass', '~> 1.0.0.alpha4'
 gem 'material_icons'
-gem 'utf8-cleaner'
-
