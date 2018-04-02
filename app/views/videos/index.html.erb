@@ -23,19 +23,19 @@
 		<!-- video覧 -->
 		<% @movies_page.each do |movie| %>
 			<div id="drag" class="draggable hoverable">
-				<% if current_user.my_lists.where(video_id: movie.id.videoId).exists? %>
+				<% if @my_lists.any?{|m| m.video_id == movie.id.video_id } %>
 					<!-- mylist登録時表示 -->
-					<%= link_to my_list_path(movie.id.videoId), remote: true, method: :delete, id: "favorite-heart#{movie.id.videoId}" do %>
+					<%= link_to my_list_path(movie.id.video_id), remote: true, method: :delete, id: "favorite-heart#{movie.id.video_id}" do %>
 						<i class="fas fa-heart faa-ring animated-hover z-depth-5" style="color: red;"></i>
 					<% end %><!-- end mylist登録時表示 -->
 				<% else %>
 					<!-- mylist未登録時表示 -->
-					<%= link_to my_lists_path(movie.id.videoId), remote: true, method: :post, id: "favorite-heart#{movie.id.videoId}" do %>
+					<%= link_to my_lists_path(movie.id.video_id), remote: true, method: :post, id: "favorite-heart#{movie.id.video_id}" do %>
 						<i class="far fa-heart faa-wrench animated-hover z-depth-5" style="color: red;"></i>
 					<% end %><!--end mylist未登録時表示 -->
 				<% end %>
 				<!-- youtubeAPI覧 -->
-				<%= content_tag(:iframe, '', src: "https://www.youtube.com/embed/#{movie.id.videoId}", width: "90%", height: "100%", frameborder: 0, allowfullscreen:true) %>
+				<%= content_tag(:iframe, '', src: "https://www.youtube.com/embed/#{movie.id.video_id}", width: "90%", height: "100%", frameborder: 0, allowfullscreen:true) %>
 			</div>
 		<% end %><!-- end video覧 -->
 	</div>
