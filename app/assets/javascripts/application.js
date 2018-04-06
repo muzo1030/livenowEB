@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require interactjs
+//= require interact
 //= require materialize
 //= require_tree .
 

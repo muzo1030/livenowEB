@@ -23,7 +23,7 @@
 		<!-- video覧 -->
 		<% @my_lists.each do |movie| %>
 			<div id="drag" class="draggable hoverable">
-				<% if current_user.my_lists.where(video_id: movie.video_id).exists? %>
+				<% if @my_lists.any?{|m| m.video_id == movie.video_id } %>
 					<!-- mylist登録時表示 -->
 					<%= link_to my_list_path(movie.video_id), remote: true, method: :delete, id: "favorite-heart#{movie.video_id}" do %>
 						<i class="fas fa-heart faa-ring animated-hover z-depth-5" style="color: red;"></i>
