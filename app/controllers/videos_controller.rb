@@ -34,7 +34,7 @@ class VideosController < ApplicationController
 
     youtube = Google::Apis::YoutubeV3::YouTubeService.new
     if Rails.env.production?
-      youtube_key = Rails.application.secrets.youtube_key
+      youtube.key = Rails.application.secrets.youtube_key
     else
       youtube.key = 'AIzaSyAUat8tsl5tjcPzcsvxs8l3hTW0_203zy0'
     end
