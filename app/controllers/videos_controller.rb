@@ -18,8 +18,6 @@ class VideosController < ApplicationController
   end
 
 
-
-
   def get_data(keyword)
     require 'google/apis/youtube_v3'
     # require 'trollop'
@@ -33,8 +31,13 @@ class VideosController < ApplicationController
     #   # opt :video_definition, 'video definition', :default => 'high' #HD動画のみ取得
     # end
 
+
     youtube = Google::Apis::YoutubeV3::YouTubeService.new
-    youtube.key = 'AIzaSyAUat8tsl5tjcPzcsvxs8l3hTW0_203zy0'
+    if Rails.env.production?
+      youtube_key: Rails.application.secrets.youtube_key
+    else
+      youtube.key = 'AIzaSyAUat8tsl5tjcPzcsvxs8l3hTW0_203zy0'
+    end
 
     # search_response = youtube.list_searches("id",
     #   q: opts[:q],
